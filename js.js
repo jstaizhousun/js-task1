@@ -14,9 +14,9 @@ function Start () {
 	var arr = new Array(3);
 	for(var i=0;i<3;i++){
 		//随机颜色
-		r = Math.floor(Math.random()*256);
-		g = Math.floor(Math.random()*256);
-		b = Math.floor(Math.random()*256);
+		var r = Math.floor(Math.random()*256);
+		var g = Math.floor(Math.random()*256);
+		var b = Math.floor(Math.random()*256);
 	 	//在0~8中取3个不同的数放入数组arr
 	 	//每次循环都随机一个0~8之间的整数赋予num
 		num = Math.floor(Math.random()*9);
@@ -41,15 +41,20 @@ function Start () {
 		}
 	}
 }
-//点击start按钮事件
-start.onclick = function() {
-	//清除定时器
-	clearInterval(time);
-	//定时器
-	time = setInterval(function(){
+function starttime() {
+	time=time = setInterval(function(){
 	//调用Start函数
 		Start();
 	},1000);
+}
+//点击start按钮事件
+start.onclick = function() {
+	//执行一次函数
+	Start();
+	//清除定时器
+	clearInterval(time);
+	//定时器
+	starttime();
 }
 finish.onclick = function(){
 	//清除定时器
