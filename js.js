@@ -4,6 +4,10 @@ var block = document.getElementById("box").getElementsByTagName("div");
 var time = null;
 //获取开始按钮
 var start = document.getElementById("start");
+
+function starttime() {
+	time = setInterval("Start()",1000);
+}
 //定义一个Start函数，用来表示选取3个不同的矩形赋予不同的颜色
 function Start () {
 	//清除上次的颜色
@@ -40,12 +44,6 @@ function Start () {
 			}
 		}
 	}
-}
-function starttime() {
-	time=time = setInterval(function(){
-	//调用Start函数
-		Start();
-	},1000);
 }
 //点击start按钮事件
 start.onclick = function() {
